@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block fullcontent %}
+<nav class="navbar navbar-dark static-top discus-header">
+    <a class="btn btn-secondary btn-lg" href="{% url 'discus_home' %}" role="button">Discus Home</a>
+    <a class="btn btn-secondary btn-lg" href="{% url 'discus_board' post.board.id %}" role="button">{{ post.board.name }}</a>
+    <a class="btn btn-secondary btn-lg" href="{% url 'discus_post' post.id %}" role="button">This Post</a>
+      <a class="btn btn-secondary btn-lg ml-auto" href="{% url 'new_reply' post.id %}" role="button">Reply</a>
+          </nav>
+<div class="m-3 p-3">
+<div class="card mb-3 text-white" style="background-color:{{post.color}};">
+  <h5 class="card-header">{{ post.created }}</h5>
+  <div class="card-body">
+    <h5 class="card-text">{{ post.message }}</h5>
+    <footer class="blockquote-footer text-white">{{post.creator}}</footer>
+    {% if post.creator.usafa_id == request.user.usafa_id %}
+    <a href="{% url 'delete_post' post.board.id post.id %}" class="btn btn-danger m-3">Delete Post</a>
+    {% endif %}
+  </div>
+</div>
+
+{% for i in post.replies.get_queryset %}
+<div class="card mb-3 text-white" style="background-color:{{post.color}};">
+  <h5 class="card-header">{{ i.created }}</h5>
+  <div class="card-body">
+    <h5 class="card-text">{{ i.message }}</h5>
+    <footer class="blockquote-footer text-white">{{i.creator}}</footer>
+     {% if i.creator.usafa_id == request.user.usafa_id %}
+    <a href="{% url 'delete_reply' post.id i.id %}" class="btn btn-danger m-3">Delete Reply</a>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

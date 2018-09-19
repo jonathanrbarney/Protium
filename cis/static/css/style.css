@@ -1,0 +1,34 @@
+:root {
+  --clr-dark: #161712;
+  --clr-light: #ffffff;
+  --clr-primary: #0c2141;
+  --clr-secondary: #2e598f;
+  --clr-accent: #940f15;
+}
+.reply{
+margin-left: 50px;
+}
+.side-bar{
+background-color: var(--clr-dark) !important;
+color: #ffffff !important;
+}
+.over-bar{
+background-color: var(--clr-primary) !important;
+color: #ffffff !important;
+}
+.ct-window{
+background-color: #ffffff !important;
+color: var(--clr-dark) !important;
+}
+.discus-header{
+background-color: var(--clr-dark) !important;
+color: #ffffff !important;
+}
+.list-post
+{
+  overflow:hidden;
+  position: relative;
+  display: block;
+  padding: 1.75rem 1.25rem !important;
+  margin-bottom: -1px;
+}
