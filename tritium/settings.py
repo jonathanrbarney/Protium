@@ -30,8 +30,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'tritium.elichor.com', 'moodle.elicho
 # Application definition
 
 INSTALLED_APPS = [
-    'dal',
-    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +40,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'widget_tweaks',
     'vote',
+    'imagekit',
+    'django_select2',
 ]
 
 MIDDLEWARE = [
@@ -127,7 +127,7 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-AUTH_USER_MODEL = 'cis.Account'
+AUTH_USER_MODEL = 'accounts.Account'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
