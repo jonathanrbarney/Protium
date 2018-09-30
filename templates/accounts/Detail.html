@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid w-100">
+    <div class="card mx-auto my-3">
+    <table class="table">
+  <tbody>
+    <tr>
+      <th scope="row">Full Name:</th>
+      <td>{{account.first_name}} {%if account.middle_name%}{{account.middle_name}} {%endif%}{{account.last_name}}</td>
+    </tr>
+            {% if account.official_email%}
+      <tr>
+      <th scope="row">Official Email:</th>
+      <td>{{ account.official_email}}</td>
+    </tr>
+{% endif%}
+              {% if account.official_phone_number%}
+      <tr>
+      <th scope="row">Official Phone Number:</th>
+      <td>{{ account.official_phone_number}}</td>
+    </tr>
+{% endif%}
+              {% if account.email%}
+      <tr>
+      <th scope="row">Personal Email:</th>
+      <td>{{ account.email}}</td>
+    </tr>
+{% endif%}
+              {% if account.phone_number%}
+      <tr>
+      <th scope="row">Personal Phone Number:</th>
+      <td>{{ account.phone_number}}</td>
+    </tr>
+{% endif%}
+                {% if account.gender%}
+      <tr>
+      <th scope="row">Gender:</th>
+      <td>{{ account.get_gender_display}}</td>
+    </tr>
+{% endif%}
+                {% if account.building%}
+      <tr>
+      <th scope="row">Building:</th>
+      <td>{{ account.building}}</td>
+    </tr>
+{% endif%}
+                {% if account.room_number%}
+      <tr>
+      <th scope="row">Room Number:</th>
+      <td>{{ account.room_number}}</td>
+    </tr>
+{% endif%}
+                {% if account.class_year%}
+      <tr>
+      <th scope="row">Class Year:</th>
+      <td>{{ account.class_year}}</td>
+    </tr>
+{% endif%}
+                {% if account.academic_advisor%}
+      <tr>
+      <th scope="row">Academic Advisor:</th>
+      <td>{{ account.academic_advisor}}</td>
+    </tr>
+{% endif%}
+  </tbody>
+    </table>
+        </div>
+
+</div>
+    {% endblock %}

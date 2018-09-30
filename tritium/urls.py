@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import *
-from cis.models import Account
+import accounts.views as views
+from accounts.models import Account
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.conf.urls.static import static
 from django.conf import settings
 from decorator_include import decorator_include
-import cis.views as views
+
 
 
 urlpatterns = [
@@ -29,7 +30,15 @@ urlpatterns = [
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
+    path('', login_required()(views.home), name='home'),
     path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
     path('register/', views.register,name='register'),
-    path('', decorator_include(login_required, 'cis.urls'))
+    path('accounts/', include('accounts.urls')),
+    path('academics/', decorator_include(login_required, 'academics.urls')),
+    path('admissions/', decorator_include(login_required, 'admissions.urls')),
+    path('athletics/', decorator_include(login_required, 'athletics.urls')),
+    path('discus/', decorator_include(login_required, 'discus.urls')),
+    path('military/', decorator_include(login_required, 'military.urls')),
+    path('schedule/', decorator_include(login_required, 'schedule.urls')),
 ]

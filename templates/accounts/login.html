@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+<div class="row align-items-center justify-content-center w-100 bg-dark" style="height:100vh;">
+    <div class="col-5">
+<div class="card">
+  <div class="card-body">
+        <h5 class="card-title text-center">Tritium</h5>
+<form method="post">{%csrf_token%}
+  <div class="form-group bmd-form-group my-4"> <!-- left unspecified, .bmd-form-group will be automatically added (inspect the code) -->
+    <label for="username" class="bmd-label-floating text-left">Username</label>
+    <input type="text" class="form-control" id="username" name="username">
+  </div>
+  <div class="form-group bmd-form-group my-4"> <!-- manually specified -->
+    <label for="password" class="bmd-label-floating text-left">Password</label>
+    <input type="password" class="form-control" id="password" name="password">
+  </div>
+        {% if form.non_field_errors %}
+    {% for err in form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+  {{err}}
+</div>
+    {% endfor %}
+    {% endif %}
+      <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn btn-raised btn-primary my-4 col-3 float-right">Login</button>
+    <a class="btn btn-primary float-left my-4 col-3" href="{% url 'register' %}">or sign up</a>
+
+</form>
+  </div>
+</div>
+    </div>
+    </div>
+
+{% endblock %}

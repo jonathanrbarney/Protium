@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{%load widget_tweaks%}
+{% block head %}
+{{ form.media.css }}
+{%endblock%}
+{% block content %}
+<div class="container-fluid w-100 m-0 p-0">
+        <nav class="bg-light w-100 p-3 row mx-0">
+
+  <ol class="breadcrumb col-md-3 col-sm-12 my-auto mr-auto bg-light">
+    <li class="breadcrumb-item"><a href="{% url 'boards'%}">Boards</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'board' post.board.id %}">{{post.board.name}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">This Post</li>
+  </ol>
+        <button type="button" class="btn btn-success btn-raised my-auto ml-auto" data-toggle="modal" data-target="#createReply">
+  Create Reply
+</button>
+        </nav>
+
+    <div class="modal fade{%if eShow %}show {%endif%}" id="createReply" tabindex="-1" role="dialog" aria-labelledby="editBoard" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createPostLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form method="post">
+    {% csrf_token %}
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% with field=form.message %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+                  {% with field=form.is_anonymous %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+                  <div class="modal-footer form-group">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success" name="action" value="create">Save changes</button>
+      </div>
+  </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="row m-3">
+<div class="card w-100 text-dark m-3" style="text-decoration: none;">
+    <div class="card-header card-title   m-3"><h3>{{post.creator.discus_id}}</h3></div>
+    <div class="card-body row d-flex justify-content-between">
+        <div class="col-md-8 col-sm-12">
+        <h5 class="w-100 m-3">{{post.message}}</h5>
+            </div>
+        <div class="col-md-4 col-sm-12 row d-flex justify-content-between">
+            <div class="col-4">
+            <h5 class="text-center">Votes</h5>
+            </div>
+            <div class="col-4">
+                      <button onclick="document.location.href = '{%url 'boards'%}'; return false" type="button" class="btn btn-success btn-raised m-auto">
+  <i class="fas fa-arrow-up"></i>
+</button>
+            </div>
+<div class="col-4">
+                    <button onclick="document.location.href = '{%url 'boards'%}'; return false" class="btn btn-warning btn-raised m-auto">
+  <i class="fas fa-arrow-down"></i>
+</button>
+    </div>
+        </div>
+
+    </div>
+  </div><div class="container">
+    {% for post in replies %}
+      <div class="card text-dark m-3" style="text-decoration: none;">
+    <div class="card-body row d-flex justify-content-between">
+        <div class="col-md-8 col-sm-12">
+        <h5 class="w-100 m-3">{{post.message}}</h5>
+            </div>
+        <div class="col-md-4 col-sm-12 row d-flex justify-content-between">
+            <div class="col-4">
+            <h5 class="text-center">Votes</h5>
+            </div>
+            <div class="col-4">
+                      <button onclick="document.location.href = '{%url 'boards'%}'; return false" type="button" class="btn btn-success btn-raised m-auto">
+  <i class="fas fa-arrow-up"></i>
+</button>
+            </div>
+<div class="col-4">
+                    <button onclick="document.location.href = '{%url 'boards'%}'; return false" class="btn btn-warning btn-raised m-auto">
+  <i class="fas fa-arrow-down"></i>
+</button>
+    </div>
+        </div>
+
+    </div>
+  </div>
+    {%endfor%}
+        </div>
+</div>
+</div>
+    {% endblock %}
+{% block script %}
+{{ form.media.js }}
+{%endblock%}

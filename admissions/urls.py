@@ -15,13 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from . import views
 from django.contrib.auth.decorators import *
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('accounts/', views.accountList, name='accountList'),
-    path('account/<id>/', views.accountDetail, name='accountDetail'),
-
 ]
