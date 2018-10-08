@@ -40,18 +40,19 @@ class Term_Instance(models.Model):
 class Course(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=1000)
+    abbreviation = models.CharField(max_length=10)
     instructors = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=False, related_name='instructed_courses')
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='courses_created')
-    managers = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=False, related_name='managed_courses')
+    admins = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=False, related_name='managed_courses')
     terms_offered = models.ManyToManyField(Term, blank=True, related_name='courses')
-    department = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    prerequisites = models.ManyToManyField('self', blank=True, related_name='prerequisite_for')
-    coerequisites = models.ManyToManyField('self', blank=True, related_name='coerequisite_of')
+    department = models.ForeignKey('Department', on_delete=models.CASCADE)
+    prerequisites = models.ManyToManyField('Course', blank=True, related_name='prerequisite_for')
+    coerequisites = models.ManyToManyField('Course', blank=True, related_name='coerequisite_of')
     summary = models.TextField()
     academic_credit_hours = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
     military_credit_hours = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
     athletic_credit_hours = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
-    archived = models.BooleanField(default=False)
+    is_archived = models.BooleanField(default=False)
     @property
     def is_active(self):
         return any([i.is_active for i in self.terms])
@@ -109,6 +110,7 @@ class Course_Instance(models.Model):
 class Department(models.Model):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4)
     name=models.CharField(max_length=300)
+    abbreviation=models.CharField(max_length=10)
     admins = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='%(class)s_faculty')
     instructors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='%(class)s_instructor')
     summary = models.TextField()
@@ -137,6 +139,7 @@ class Course_Requirement(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=300)
     courses_satisfy = models.ManyToManyField(Course, related_name='requirements_satisfied')
+
     #allow users easy way to select all courses in a department
 
 class Term_Template(models.Model):

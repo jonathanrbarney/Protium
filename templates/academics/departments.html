@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{%load widget_tweaks%}
+{% block head %}
+{{ form.media.css }}
+{%endblock%}
+{% block content %}
+<div class="container-fluid w-100 m-0 p-0">
+        <nav class="bg-light w-100 p-3 row mx-0">
+              <ol class="breadcrumb col-md-3 col-sm-12 my-auto mr-auto bg-light">
+    <li class="breadcrumb-item active">Departments</li>
+  </ol>
+            <button type=" m-auto button" class="btn btn-success btn-raised my-auto ml-3" data-toggle="modal" data-target="#createDepartment">
+  Create Department
+</button>
+        </nav>
+    <div class="modal fade{%if show %}show {%endif%}" id="createDepartment" tabindex="-1" role="dialog" aria-labelledby="createDepartment" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createDepartmentLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form method="post">
+    {% csrf_token %}
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% with field=form.name %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+                  {% with field=form.abbreviation %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+
+                  {% with field=form.summary %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+                                {% with field=form.admins %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+                                {% with field=form.instructors %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control' }}
+        {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endwith %}
+                  <div class="modal-footer form-group">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Save changes</button>
+      </div>
+  </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="row mx-auto my-4 container">
+    {% for department in departments %}
+      <a class="card col-sm-1 col-md-3 col-lg-2 m-3 p-0 text-dark" style="text-decoration: none;" href="{% url 'department' department.id %}">
+    <div class="card-body">
+      <h5 class="card-title">{{department.name}}</h5>
+        <p>{{department.summary}}</p>
+        <form action="{% url 'department' department.id %}" method="post">
+            {%csrf_token%}
+            {% if not department.is_archived %}
+    <input class="btn btn-raised btn-warning" type="submit" name="action" value="archive" />
+            {% else%}
+    <input class="btn btn-raised btn-success" type="submit" name="action" value="unarchive" />
+            {% endif%}
+</form>
+    </div>
+  </a>
+    {%endfor%}
+</div>
+</div>
+    {% endblock %}
+{% block script %}
+{{ form.media.js }}
+{%endblock%}

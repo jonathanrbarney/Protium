@@ -20,7 +20,7 @@ from django.views.generic import RedirectView
 import discus.views as views
 
 urlpatterns = [
-    path('boards/', views.boards, name='boards'),
+    path('', views.boards, name='boards'),
     path('board/<id>/', views.board, name='board'),
     path('post/<id>/', views.post, name='post'),
 ]

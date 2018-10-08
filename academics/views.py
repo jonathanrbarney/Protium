@@ -14,10 +14,10 @@ from discus.forms import *
 
 def departments(request):
     departments = Department.objects.all()
-    form = departmentEdit()
+    form = course()
     show=False
     if request.method=='POST':
-        form = departmentEdit(request.POST)
+        form = course(request.POST)
         if form.is_valid():
             form.save()
         else:
@@ -26,54 +26,54 @@ def departments(request):
 
 def department(request, id):
     department = shortcuts.get_object_or_404(Department, id=id)
-    eForm = departmentEdit(instance=department)
-    cForm = postForm()
+    eForm = courseForm(instance=department)
+    cForm = courseForm()
     cShow = False
     eShow = False
     if request.method=='POST':
         if request.POST['action']=='archive':
             department.is_archived=True
             department.save()
-            return shortcuts.redirect('boards')
+            return shortcuts.redirect('departments')
         elif request.POST['action']=='unarchive':
             department.is_archived=False
             department.save()
-            return shortcuts.redirect('boards')
+            return shortcuts.redirect('departments')
         elif request.POST['action'] == 'edit':
-            eForm = boardForm(request.POST, instance=board)
+            eForm = course(request.POST, instance=department)
             if eForm.is_valid():
                 eForm.save()
             else:
                 eShow = True
         elif request.POST['action'] == 'create':
-            cForm = postForm(request.POST)
+            cForm = courseEdit(request.POST)
             if cForm.is_valid():
-                post=cForm.save()
-                post.creator = request.user
-                post.board = board
-                post.save()
+                course=cForm.save()
+                course.creator = request.user
+                course.department = department
+                course.save()
             else:
                 cShow = True
-    return shortcuts.render(request, 'discus/board.html', {'eForm':eForm,'cForm':cForm, 'posts':board.posts.all(),
-                                                           'board': board, 'cShow':cShow, 'eShow':eShow})
+    return shortcuts.render(request, 'discus/department.html', {'eForm':eForm,'cForm':cForm, 'courses':department.courses.all(),
+                                                           'department': department, 'cShow':cShow, 'eShow':eShow})
 
-def post(request, id):
-    post = shortcuts.get_object_or_404(Post, id=id)
-    bid = post.board.id
-    form = postForm()
+def course(request, id):
+    course = shortcuts.get_object_or_404(Post, id=id)
+    bid = course.department.id
+    form = courseForm()
     show = False
     if request.method=='POST':
         if request.POST['action']=='delete':
-            post.delete()
-            return shortcuts.redirect(reverse('board', bid))
+            course.delete()
+            return shortcuts.redirect(reverse('department', bid))
         elif request.POST['action'] == 'create':
-            form = postForm(request.POST)
+            form = courseForm(request.POST)
             if form.is_valid():
                 reply = form.save()
                 reply.creator = request.user
-                reply.reply_to = post
+                reply.reply_to = course
                 reply.save()
             else:
                 show = True
-    return shortcuts.render(request, 'discus/post.html', {'form':form, 'replies':post.replies.all(),
-                                                           'post': post, 'show':show})
+    return shortcuts.render(request, 'discus/course.html', {'form':form, 'replies':course.replies.all(),
+                                                           'course': course, 'show':show})

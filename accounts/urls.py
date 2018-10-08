@@ -20,8 +20,7 @@ from django.contrib.auth.decorators import *
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('accounts/', views.accountList, name='accountList'),
-    path('account/<id>/', views.accountDetail, name='accountDetail'),
+    path('', views.accountList, name='accountList'),
+    path('<id>/', views.accountDetail, name='accountDetail'),
 
 ]

@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95e2142e-1144-4061-a3ac-c42b1d202593" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/bootstrap-material-design.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/academics/departments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/academics/department.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/discus/boards.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/discus/boards.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tritium/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tritium/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tritium/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tritium/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,58 +75,59 @@
     <session id="952472389">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.closed" value="26" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="39" />
-          <entry key="py" value="95" />
+          <entry key="html" value="44" />
+          <entry key="py" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="39" />
-          <entry key="Python" value="95" />
+          <entry key="HTML" value="44" />
+          <entry key="Python" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="60" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="8244" />
-          <entry key="py" value="9899" />
+          <entry key="html" value="8466" />
+          <entry key="py" value="10176" />
           <entry key="txt" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="60" />
-          <entry key="HTML" value="8244" />
+          <entry key="HTML" value="8466" />
           <entry key="PLAIN_TEXT" value="71" />
-          <entry key="Python" value="9899" />
+          <entry key="Python" value="10176" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tritium/urls.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/academics/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="400">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
               </folding>
@@ -128,13 +136,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+        <entry file="file://$PROJECT_DIR$/academics/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+            <state relative-caret-position="360">
+              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
               <folding>
-                <element signature="e#631#663#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/academics/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/academics/departments.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1800">
+              <caret line="90" column="67" selection-start-line="90" selection-start-column="67" selection-end-line="90" selection-end-column="97" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/academics/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="46" column="84" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tritium/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/academics/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -151,12 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>block</find>
-      <find>static</find>
-      <find>css</find>
-      <find>stat</find>
-      <find>debu</find>
-      <find>favico</find>
       <find>ic</find>
       <find>auth</find>
       <find>creato</find>
@@ -181,6 +243,12 @@
       <find>createPost</find>
       <find>department</find>
       <find>cis</find>
+      <find>name='home'</find>
+      <find>static</find>
+      <find>Board</find>
+      <find>board</find>
+      <find>departmentEdit</find>
+      <find>departments</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -195,7 +263,13 @@
       <replace>AUTH_USER_MODEL</replace>
       <replace>settings.AUTH_USER_MODEL'\</replace>
       <replace>settings.AUTH_USER_MODEL</replace>
+      <replace>departmentForm</replace>
+      <replace>course</replace>
+      <replace>department</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\jonat\Desktop\Tritium</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -203,7 +277,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/discus/discus_home.html" />
         <option value="$PROJECT_DIR$/templates/discus/discus_board.html" />
         <option value="$PROJECT_DIR$/templates/discus/discus_post.html" />
         <option value="$PROJECT_DIR$/templates/accounts/user_page.html" />
@@ -229,7 +302,6 @@
         <option value="$PROJECT_DIR$/cis/views.py" />
         <option value="$PROJECT_DIR$/cis/models.py" />
         <option value="$PROJECT_DIR$/cis/forms.py" />
-        <option value="$PROJECT_DIR$/academics/forms.py" />
         <option value="$PROJECT_DIR$/cis/admin.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
         <option value="$PROJECT_DIR$/athletics/models.py" />
@@ -240,20 +312,22 @@
         <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/discus/forms.py" />
         <option value="$PROJECT_DIR$/discus/models.py" />
-        <option value="$PROJECT_DIR$/discus/urls.py" />
         <option value="$PROJECT_DIR$/discus/views.py" />
-        <option value="$PROJECT_DIR$/templates/discus/boards.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/discus/board.html" />
         <option value="$PROJECT_DIR$/templates/discus/post.html" />
-        <option value="$PROJECT_DIR$/academics/views.py" />
-        <option value="$PROJECT_DIR$/academics/models.py" />
-        <option value="$PROJECT_DIR$/templates/academics/departments.html" />
-        <option value="$PROJECT_DIR$/academics/urls.py" />
-        <option value="$PROJECT_DIR$/tritium/settings.py" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
-        <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/tritium/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/templates/discus/boards.html" />
+        <option value="$PROJECT_DIR$/discus/urls.py" />
+        <option value="$PROJECT_DIR$/templates/academics/departments.html" />
+        <option value="$PROJECT_DIR$/academics/admin.py" />
+        <option value="$PROJECT_DIR$/academics/urls.py" />
+        <option value="$PROJECT_DIR$/academics/views.py" />
+        <option value="$PROJECT_DIR$/academics/forms.py" />
+        <option value="$PROJECT_DIR$/academics/models.py" />
+        <option value="$PROJECT_DIR$/tritium/settings.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -275,6 +349,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,7 +360,24 @@
             <path>
               <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="academics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="academics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="discus" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
@@ -300,29 +392,28 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bidtool" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../personal" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jonat\Desktop\Tritium\templates" />
-      <recent name="C:\Users\jonat\Desktop\Tritium\accounts" />
-      <recent name="C:\Users\jonat\Desktop\Tritium\templates\accounts" />
-      <recent name="C:\Users\jonat\Desktop\tritium\templates\accounts" />
-      <recent name="C:\Users\jonat\Desktop\tritium\tritium" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jonat\Desktop\Tritium\templates\academics" />
       <recent name="C:\Users\jonat\Desktop\Tritium\schedule" />
       <recent name="C:\Users\jonat\Desktop\Tritium\military" />
       <recent name="C:\Users\jonat\Desktop\Tritium\discus" />
       <recent name="C:\Users\jonat\Desktop\Tritium\athletics" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jonat\Desktop\Tritium\templates" />
+      <recent name="C:\Users\jonat\Desktop\Tritium\accounts" />
+      <recent name="C:\Users\jonat\Desktop\Tritium\templates\accounts" />
+      <recent name="C:\Users\jonat\Desktop\tritium\templates\accounts" />
+      <recent name="C:\Users\jonat\Desktop\tritium\tritium" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -526,7 +617,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changing settings for dev." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cis/submodels/discus.py" />
     <entry file="file://$PROJECT_DIR$/cis/submodels/military.py" />
     <entry file="file://$PROJECT_DIR$/cis/submodels/schedule.py" />
     <entry file="file://$PROJECT_DIR$/cis/tests.py" />
@@ -607,20 +697,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tritium/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tritium/views.py" />
     <entry file="file://$PROJECT_DIR$/templates/accounts/List.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -628,38 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/discus/board.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1284">
-          <caret line="18" column="200" selection-start-line="18" selection-start-column="200" selection-end-line="18" selection-end-column="200" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/discus/boards.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discus/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -677,27 +726,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/academics/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2240">
-          <caret line="129" column="40" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/academics/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/discus/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,45 +740,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/academics/departments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="45" column="16" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/academics/courses.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/academics/course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/academics/course.html" />
     <entry file="file://$PROJECT_DIR$/templates/academics/department.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/academics/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/academics/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/forms.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -759,9 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1660">
           <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -772,30 +768,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tritium/settings.py">
+    <entry file="file://$PROJECT_DIR$/tritium/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        <state relative-caret-position="377">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/discus/boards.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discus/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+        <state relative-caret-position="520">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding>
             <element signature="e#631#663#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tritium/urls.py">
+    <entry file="file://$PROJECT_DIR$/academics/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
-            <element signature="e#631#663#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="46" column="84" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tritium/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/academics/departments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="90" column="67" selection-start-line="90" selection-start-column="67" selection-end-line="90" selection-end-column="97" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
         </state>
       </provider>
     </entry>
