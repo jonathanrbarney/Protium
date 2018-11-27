@@ -2,11 +2,11 @@
 {% load widget_tweaks %}
 
 {% block body %}
-<div class="row align-items-center justify-content-center w-100 bg-dark" style="height:100vh;">
-    <div class="col-5">
+<div class="row align-items-center justify-content-center w-100 bg-dark p- m-0" style="height:100vh;">
+    <div class="col-md-4 col-sm-12 m-0 p-3">
 <div class="card">
   <div class="card-body">
-        <h5 class="card-title text-center">Tritium</h5>
+        <h5 class="card-title text-center">USAFA Tritium</h5>
 <form method="post">{%csrf_token%}
   <div class="form-group bmd-form-group my-4"> <!-- left unspecified, .bmd-form-group will be automatically added (inspect the code) -->
     <label for="username" class="bmd-label-floating text-left">Username</label>

@@ -53,41 +53,25 @@ class Position(models.Model):
 
 class AMI(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    term_instance = models.ForeignKey('academics.Term_Instance', on_delete=models.CASCADE)
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="amis")
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     score = models.DecimalField(max_digits=5, decimal_places=2)
 
 class SAMI(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    term_instance = models.ForeignKey('academics.Term_Instance', on_delete=models.CASCADE)
+    cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="aamis")
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     score = models.DecimalField(max_digits=5, decimal_places=2)
 
 class PAI(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    term_instance = models.ForeignKey('academics.Term_Instance', on_delete=models.CASCADE)
+    cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="pais")
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     score = models.DecimalField(max_digits=5, decimal_places=2)
 
 class Unit(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=128, blank=False)
-    members = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='units_member', through='Membership')
+    members = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="units")
     positions = models.ManyToManyField(Position, related_name='units')
     commanders = models.ManyToManyField(Position, related_name='units_commanded')
-
-class Rating(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    ratee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    rating = models.DecimalField(max_digits=3, decimal_places=1)
-
-class Rating_Table(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    term = models.ForeignKey('academics.Term_Instance', on_delete=models.CASCADE)
-    Membership = models.ForeignKey('Membership', on_delete=models.CASCADE)
-    ratings = models.ManyToManyField(Rating, related_name='rating_table')
-
-class Membership(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    profile = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    unit = models.ForeignKey('Unit', on_delete=models.CASCADE)

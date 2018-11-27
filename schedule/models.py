@@ -29,22 +29,7 @@ class Period_Slot(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     from_time = models.TimeField()
     to_time = models.TimeField()
-    period = models.ForeignKey('Period', on_delete=models.CASCADE, related_name='slots')
     schedule=models.ForeignKey('Schedule', on_delete=models.CASCADE, related_name='slots')
-
-class Period(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.CharField(max_length=1000)
-
-class Section(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    course = models.ForeignKey('academics.Course', on_delete=models.CASCADE)
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='sections_created')
-    instructor = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='%(class)s_instructed')
-    term = models.ForeignKey('academics.Term', on_delete = models.CASCADE, related_name='sections')
-    students = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name = 'sections')
-    auditors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name = 'audited')
-    period = models.ManyToManyField(Period, related_name = 'sections')
 
 class SCA_Restriction(models.Model):
     restriction = models.CharField(max_length=128)
@@ -85,11 +70,6 @@ class Form_18(models.Model):
 class Day_Type_Instance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     date = models.DateField()
-
-class Section_Instance(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    section = models.ForeignKey('Section', on_delete=models.CASCADE)
-    day_type_instance = models.ForeignKey('Day_Type_Instance', on_delete=models.CASCADE, related_name='section_instances')
 
 class Admin_Excusal(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)

@@ -10,102 +10,37 @@
               <ol class="breadcrumb col-md-3 col-sm-12 my-auto mr-auto bg-light">
     <li class="breadcrumb-item active">Departments</li>
   </ol>
-            <button type=" m-auto button" class="btn btn-success btn-raised my-auto ml-3" data-toggle="modal" data-target="#createDepartment">
-  Create Department
-</button>
         </nav>
-    <div class="modal fade{%if show %}show {%endif%}" id="createDepartment" tabindex="-1" role="dialog" aria-labelledby="createDepartment" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="createDepartmentLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form method="post">
-    {% csrf_token %}
 
-    {% for hidden in form.hidden_fields %}
-      {{ hidden }}
-    {% endfor %}
-
-    {% with field=form.name %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field|add_class:'form-control' }}
-        {% for error in field.errors %}
-          <span class="help-block">{{ error }}</span>
-        {% endfor %}
-      </div>
-    {% endwith %}
-                  {% with field=form.abbreviation %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field|add_class:'form-control' }}
-        {% for error in field.errors %}
-          <span class="help-block">{{ error }}</span>
-        {% endfor %}
-      </div>
-    {% endwith %}
-
-                  {% with field=form.summary %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field|add_class:'form-control' }}
-        {% for error in field.errors %}
-          <span class="help-block">{{ error }}</span>
-        {% endfor %}
-      </div>
-    {% endwith %}
-                                {% with field=form.admins %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field|add_class:'form-control' }}
-        {% for error in field.errors %}
-          <span class="help-block">{{ error }}</span>
-        {% endfor %}
-      </div>
-    {% endwith %}
-                                {% with field=form.instructors %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field|add_class:'form-control' }}
-        {% for error in field.errors %}
-          <span class="help-block">{{ error }}</span>
-        {% endfor %}
-      </div>
-    {% endwith %}
-                  <div class="modal-footer form-group">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success">Save changes</button>
-      </div>
-  </form>
-      </div>
-    </div>
-  </div>
-</div>
     <div class="row mx-auto my-4 container">
-    {% for department in departments %}
-      <a class="card col-sm-1 col-md-3 col-lg-2 m-3 p-0 text-dark" style="text-decoration: none;" href="{% url 'department' department.id %}">
-    <div class="card-body">
-      <h5 class="card-title">{{department.name}}</h5>
-        <p>{{department.summary}}</p>
-        <form action="{% url 'department' department.id %}" method="post">
-            {%csrf_token%}
-            {% if not department.is_archived %}
-    <input class="btn btn-raised btn-warning" type="submit" name="action" value="archive" />
-            {% else%}
-    <input class="btn btn-raised btn-success" type="submit" name="action" value="unarchive" />
-            {% endif%}
-</form>
-    </div>
-  </a>
-    {%endfor%}
+        <div id="departments-table"></div>
 </div>
 </div>
     {% endblock %}
 {% block script %}
+<script>
+ var tabledata = [
+ 	{id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
+ 	{id:2, name:"Mary May", age:"1", col:"blue", dob:"14/05/1982"},
+ 	{id:3, name:"Christine Lobowski", age:"42", col:"green", dob:"22/05/1982"},
+ 	{id:4, name:"Brendon Philips", age:"125", col:"orange", dob:"01/08/1980"},
+ 	{id:5, name:"Margret Marmajuke", age:"16", col:"yellow", dob:"31/01/1999"},
+ ];
+ var table = new Tabulator("#departments-table", {
+ 	height:false, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+ 	data:tabledata, //assign data to table
+ 	responsiveLayout:"hide",
+ 	layout:"fitColumns", //fit columns to width of table (optional)
+ 	columns:[ //Define Table Columns
+	 	{title:"Name", field:"name", width:150},
+	 	{title:"Age", field:"age", align:"left", formatter:"progress"},
+	 	{title:"Favourite Color", field:"col"},
+	 	{title:"Date Of Birth", field:"dob", sorter:"date", align:"center"},
+ 	],
+ 	rowClick:function(e, row){ //trigger an alert message when the row is clicked
+ 		alert("Row " + row.getData().id + " Clicked!!!!");
+ 	},
+});
+</script>
 {{ form.media.js }}
 {%endblock%}

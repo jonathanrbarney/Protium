@@ -14,10 +14,10 @@ from discus.forms import *
 
 def departments(request):
     departments = Department.objects.all()
-    form = course()
+    form = departmentForm()
     show=False
     if request.method=='POST':
-        form = course(request.POST)
+        form = departmentForm(request.POST)
         if form.is_valid():
             form.save()
         else:
@@ -40,13 +40,13 @@ def department(request, id):
             department.save()
             return shortcuts.redirect('departments')
         elif request.POST['action'] == 'edit':
-            eForm = course(request.POST, instance=department)
+            eForm = courseForm(request.POST, instance=department)
             if eForm.is_valid():
                 eForm.save()
             else:
                 eShow = True
         elif request.POST['action'] == 'create':
-            cForm = courseEdit(request.POST)
+            cForm = courseForm(request.POST)
             if cForm.is_valid():
                 course=cForm.save()
                 course.creator = request.user
@@ -54,7 +54,7 @@ def department(request, id):
                 course.save()
             else:
                 cShow = True
-    return shortcuts.render(request, 'discus/department.html', {'eForm':eForm,'cForm':cForm, 'courses':department.courses.all(),
+    return shortcuts.render(request, 'academics/department.html', {'eForm':eForm,'cForm':cForm, 'courses':department.courses.all(),
                                                            'department': department, 'cShow':cShow, 'eShow':eShow})
 
 def course(request, id):

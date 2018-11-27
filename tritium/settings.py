@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'vote',
     'imagekit',
     'django_select2',
+    'admin_honeypot',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -156,3 +157,12 @@ SECURE_CONTENT_TYPE_NOSNIFF = False
 DEBUG = True
 
 X_FRAME_OPTIONS = 'DENY'
+
+ADMIN_HONEYPOT_EMAIL_ADMINS=True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.jonathanbarney.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'noreply@jonathanbarney.com'
+EMAIL_HOST_PASSWORD = 'Qr9$h$Z5Ul1iy4wo090$&sv*kl1!'
+EMAIL_USE_TLS = True

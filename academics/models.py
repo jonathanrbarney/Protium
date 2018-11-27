@@ -19,23 +19,9 @@ from imagekit.processors import ResizeToFill
 
 class Term(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    sequence_number = models.IntegerField(unique=True)
     name = models.CharField(max_length=1000)
-
-
-    # def calculate_GPA(self):
-
-class Program_Schedule(models.Model):
-    id=models.UUIDField(primary_key=True, default=uuid.uuid4)
-    profile = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, limit_choices_to={'is_Cadet': True}, null=True, blank=True)
-
-class Term_Instance(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    program_schedule = models.ForeignKey('Program_Schedule', on_delete=models.CASCADE, related_name='term_instances')
-    term = models.ForeignKey('Term', on_delete=models.CASCADE)
-    GPA_Final = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
-    MPA_Final = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
-    PEA_Final = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
+    from_date = models.DateField()
+    to_date = models.DateField()
 
 class Course(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
@@ -45,7 +31,7 @@ class Course(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='courses_created')
     admins = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=False, related_name='managed_courses')
     terms_offered = models.ManyToManyField(Term, blank=True, related_name='courses')
-    department = models.ForeignKey('Department', on_delete=models.CASCADE)
+    department = models.ForeignKey('Department', on_delete=models.CASCADE, related_name='courses')
     prerequisites = models.ManyToManyField('Course', blank=True, related_name='prerequisite_for')
     coerequisites = models.ManyToManyField('Course', blank=True, related_name='coerequisite_of')
     summary = models.TextField()
@@ -53,16 +39,30 @@ class Course(models.Model):
     military_credit_hours = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
     athletic_credit_hours = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
     is_archived = models.BooleanField(default=False)
+    public = models.BooleanField(default=True, blank=False)
     @property
     def is_active(self):
         return any([i.is_active for i in self.terms])
 
-class Course_Instance(models.Model):
+class Period(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    program_schedule = models.ForeignKey('Program_Schedule', on_delete=models.CASCADE)
-    term_instance = models.ForeignKey('Term_Instance', on_delete=models.CASCADE, related_name='course_instances')
-    course = models.ForeignKey('Course', on_delete=models.CASCADE)
-    number_grade = models.DecimalField(max_digits=6, decimal_places=4)
+    name = models.CharField(max_length=1000)
+
+class Section(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='sections_created')
+    instructor = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='%(class)s_instructed')
+    term = models.ForeignKey(Term, on_delete = models.CASCADE, related_name='sections')
+    students = models.ManyToManyField(settings.AUTH_USER_MODEL, through='Enrollment')
+    max_students = models.IntegerField(null=True, blank=True)
+    period = models.ManyToManyField(Period, related_name = 'sections')
+
+class Enrollment(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="enrollments")
+    section = models.ForeignKey(Section, on_delete=models.SET_NULL, related_name="enrollments", null=True)
+    number_grade = models.DecimalField(max_digits=7, decimal_places=4)
     GRADE_CHOICES = (
         ('A', 'A'),
         ('A-', 'A-'),
@@ -82,10 +82,10 @@ class Course_Instance(models.Model):
         ('P', 'Passing'),
         ('N', 'No Grade'),
     )
-    letter_grade_current = models.CharField(max_length=2, choices=GRADE_CHOICES)
+    letter_grade_current = models.CharField(max_length=2, choices=GRADE_CHOICES, null=True, blank=True)
     letter_grade_final = models.CharField(max_length=2, choices=GRADE_CHOICES, null=True, blank=True)
 
-    def quality_points(self):
+    def quality_points(self, grade):
         GRADE_CHOICES = {
             'A': 4.00,
             'A-': 3.70,
@@ -105,7 +105,7 @@ class Course_Instance(models.Model):
             'P': None,
             'N': None,
         }
-        return GRADE_CHOICES[self.letter_grade]
+        return GRADE_CHOICES[grade]
 
 class Department(models.Model):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4)
@@ -141,13 +141,3 @@ class Course_Requirement(models.Model):
     courses_satisfy = models.ManyToManyField(Course, related_name='requirements_satisfied')
 
     #allow users easy way to select all courses in a department
-
-class Term_Template(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.CharField(max_length=300)
-    courses = models.ManyToManyField(Course)
-    term_sequence_number = models.IntegerField()
-
-class Program_Schedule_Template(models.Model):
-    id=models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.CharField(max_length=300)

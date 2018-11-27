@@ -25,7 +25,8 @@ from decorator_include import decorator_include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('nucleus/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls')),
     re_path(r'^select2/', decorator_include(login_required, 'django_select2.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
