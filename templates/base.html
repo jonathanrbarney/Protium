@@ -117,19 +117,19 @@
     <a class="nav-link" data-toggle="collapse" href="#helpLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
         I Need Help</a>
       <div class="collapse ml-3" id="helpLinks">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{% url 'peers' %}">
         PEERS</a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'sapr' %}">
         SAPR</a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'chaplain' %}">
         Chaplain Corps</a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'mflacs' %}">
         MFLACS</a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'study' %}">
         Study Support</a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'fitness' %}">
         Fitness Help</a>
-                   <a class="nav-link" href="#">
+                   <a class="nav-link" href="{% url 'tech' %}">
         Technical Support</a>
 </div>
   </li>
@@ -138,9 +138,9 @@
     <a class="nav-link" data-toggle="collapse" href="#foodLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
         Mitchell Hall</a>
       <div class="collapse ml-3" id="foodLinks">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="{% url 'meals' %}">
         Meals</a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'requests' %}">
         Requests</a>
 </div>
   </li>
