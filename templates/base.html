@@ -40,7 +40,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-      <link href="{% static 'tablulator_semantic-ui.min.css'%}" rel="stylesheet">
+      <link href="{% static 'tabulator_semantic-ui.min.css'%}" rel="stylesheet">
 <script type="text/javascript" src="{% static 'tabulator.min.js'%}"></script>
 
       <title>Tritium</title>
@@ -59,7 +59,7 @@
   </button>
   <div class="dropdown-menu ">
     <a class="dropdown-item" href="#">My Account</a>
-    <a class="dropdown-item" href="{% url 'logout' %}   ">Log Out</a>
+    <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
   </div>
 </div>
 </nav>
@@ -70,65 +70,80 @@
 
     <ul class="nav flex-column">
   <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#cadetLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
-        Cadet</a>
-      <div class="collapse ml-3" id="cadetLinks">
-          <a class="nav-link" href="#">
-        Dashboard</a>
-                <a class="nav-link" href="#">
-        Program Summary</a>
-                          <a class="nav-link" href="#">
-        This Semester</a>
-                          <a class="nav-link" href="#">
-        CAS</a>
-          <a class="nav-link" href="#">
-        Military</a>
-</div>
+    <a class="nav-link" href="{% url 'directory' %}">Directory</a>
   </li>
           <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#instructorLinks" role="button" aria-expanded="false" aria-controls="instructorLinks">
-        Instructor</a>
-      <div class="collapse ml-3" id="instructorLinks">
-          <a class="nav-link" href="#">
-        Sections Instructed</a>
-                <a class="nav-link" href="#">
-        Sections Managed</a>
-</div>
+    <a class="nav-link" href="{% url 'cas' %}">CAS</a>
   </li>
-          <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#cadetLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
-        Cadet</a>
-      <div class="collapse ml-3" id="cadetLinks">
-          <a class="nav-link" href="#">
-        Dashboard</a>
-                <a class="nav-link" href="#">
-        Program Summary</a>
-                          <a class="nav-link" href="#">
-        This Semester</a>
-                          <a class="nav-link" href="#">
-        CAS</a>
-          <a class="nav-link" href="#">
-        Military</a>
-</div>
-  </li>
-          <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#academicAdminLinks" role="button" aria-expanded="false" aria-controls="academicAdminLinks">
-        Academic Admin</a>
-      <div class="collapse ml-3" id="academicAdminLinks">
-          <a class="nav-link" href="#">
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#academicsLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
+        Academics</a>
+      <div class="collapse ml-3" id="academicsLinks">
+          <a class="nav-link" href="{% url 'courses' %}">
+        Courses</a>
+                <a class="nav-link" href="{% url 'programs' %}">
+        Programs</a>
+                          <a class="nav-link" href="{% url 'departments' %}">
         Departments</a>
-                <a class="nav-link" href="#">
-        Program Summary</a>
-                          <a class="nav-link" href="#">
-        This Semester</a>
-                          <a class="nav-link" href="#">
+</div>
+  </li>
+          <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#militaryLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
         Military</a>
+      <div class="collapse ml-3" id="militaryLinks">
+          <a class="nav-link" href="{% url 'positions' %}">
+        Positions</a>
+                <a class="nav-link" href="{% url 'units' %}">
+        Units</a>
+                          <a class="nav-link" href="{% url 'mGrading' %}">
+        Grading</a>
+
+</div>
+  </li>
+          <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#athleticsLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
+        Athletics</a>
+      <div class="collapse ml-3" id="athleticsLinks">
+          <a class="nav-link" href="{% url 'aGrading' %}">
+        Grading</a>
+                <a class="nav-link" href="{% url 'teams' %}">
+        Teams</a>
 </div>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{% url 'boards' %}">Discus</a>
   </li>
-
+          <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#helpLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
+        I Need Help</a>
+      <div class="collapse ml-3" id="helpLinks">
+          <a class="nav-link" href="#">
+        PEERS</a>
+                    <a class="nav-link" href="#">
+        SAPR</a>
+                    <a class="nav-link" href="#">
+        Chaplain Corps</a>
+                <a class="nav-link" href="#">
+        MFLACS</a>
+                    <a class="nav-link" href="#">
+        Study Support</a>
+                    <a class="nav-link" href="#">
+        Fitness Help</a>
+                   <a class="nav-link" href="#">
+        Technical Support</a>
+</div>
+  </li>
+          </li>
+                  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#foodLinks" role="button" aria-expanded="false" aria-controls="cadetLinks">
+        Mitchell Hall</a>
+      <div class="collapse ml-3" id="foodLinks">
+          <a class="nav-link" href="#">
+        Meals</a>
+                    <a class="nav-link" href="#">
+        Requests</a>
+</div>
+  </li>
 </ul>
 </div>
 </nav>

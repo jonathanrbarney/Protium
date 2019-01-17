@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.contrib.auth.decorators import *
 from django.views.generic import RedirectView
+from military import views
 
 urlpatterns = [
+    path('positions/', views.positions, name='positions'),
+    path('units/', views.programs, name='programs'),
+    path('grading/', views.grading, name='mGrading'),
 ]

@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                 ('creator', models.ForeignKey(limit_choices_to={'is_MDG': True}, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='form_18_created', to=settings.AUTH_USER_MODEL)),
                 ('member', models.ForeignKey(limit_choices_to={'is_Cadet': True}, on_delete=django.db.models.deletion.CASCADE, related_name='form_18_member', to=settings.AUTH_USER_MODEL)),
                 ('members', models.ManyToManyField(to=settings.AUTH_USER_MODEL)),
-                ('type', models.ManyToManyField(to='schedule.FM18_Type')),
+                ('type', models.ManyToManyField(to='cas.FM18_Type')),
             ],
         ),
         migrations.CreateModel(
@@ -105,17 +105,17 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=1000)),
-                ('day_type', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='schedule.Day_Type')),
+                ('day_type', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='cas.Day_Type')),
             ],
         ),
         migrations.AddField(
             model_name='sca',
             name='restrictions',
-            field=models.ManyToManyField(blank=True, to='schedule.SCA_Restriction'),
+            field=models.ManyToManyField(blank=True, to='cas.SCA_Restriction'),
         ),
         migrations.AddField(
             model_name='period_slot',
-            name='schedule',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='slots', to='schedule.Schedule'),
+            name='cas',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='slots', to='cas.Schedule'),
         ),
     ]

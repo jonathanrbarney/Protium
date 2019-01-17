@@ -41,13 +41,14 @@ INSTALLED_APPS = [
     'admissions.apps.AdmissionsConfig',
     'discus.apps.DiscusConfig',
     'military.apps.MilitaryConfig',
-    'schedule.apps.ScheduleConfig',
+    'cas.apps.ScheduleConfig',
     'phonenumber_field',
     'widget_tweaks',
     'vote',
     'imagekit',
     'django_select2',
     'admin_honeypot',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +167,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'noreply@jonathanbarney.com'
 EMAIL_HOST_PASSWORD = 'Qr9$h$Z5Ul1iy4wo090$&sv*kl1!'
 EMAIL_USE_TLS = True
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

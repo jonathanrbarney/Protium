@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.contrib.auth.decorators import *
 from django.views.generic import RedirectView
+from athletics import views
 
 urlpatterns = [
-]
+    path('grading/', views.grading, name='aGrading'),
+    path('teams/', views.teams, name='teams'),
+    ]

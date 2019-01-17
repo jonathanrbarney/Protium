@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.contrib.auth.decorators import *
 from django.views.generic import RedirectView
+from cas import views
 
 urlpatterns = [
+    path('', views.home, name='cas'),
 ]
