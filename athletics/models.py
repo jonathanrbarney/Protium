@@ -14,17 +14,16 @@ from django.core.validators import MinLengthValidator
 from datetime import date
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+
 
 class PFT(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    term_instance = models.ForeignKey('academics.Term_Instance', on_delete=models.CASCADE)
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='PFT_scores_created')
+    cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     score = models.DecimalField(max_digits=5, decimal_places=2)
 
 class AFT(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    term_instance = models.ForeignKey('academics.Term_Instance', on_delete=models.CASCADE)
-    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='AFT_scores_created')
     score = models.DecimalField(max_digits=5, decimal_places=2)

@@ -1,26 +1,11 @@
-"""tritium URL Configuration
+from django.urls import include, path
+from rest_framework import routers
+from discus import views
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, re_path
-from django.contrib.auth.decorators import *
-from django.views.generic import RedirectView
-import discus.views as views
+router = routers.DefaultRouter()
+router.register(r'board', views.BoardViewSet)
+router.register(r'posts', views.PostViewSet)
 
 urlpatterns = [
-    path('', views.boards, name='boards'),
-    path('board/<id>/', views.board, name='board'),
-    path('post/<id>/', views.post, name='post'),
+    path('', include(router.urls)),
 ]

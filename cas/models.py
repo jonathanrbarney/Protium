@@ -13,8 +13,7 @@ from django.core.validators import MinLengthValidator
 from datetime import date
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+
 
 class Day_Type(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)

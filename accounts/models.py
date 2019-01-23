@@ -13,12 +13,11 @@ from django.core.validators import MinLengthValidator
 from datetime import date
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
 
 
 class Account(AbstractUser):
-    usafa_id = models.CharField(max_length=6, primary_key=True, unique=True, validators=[MinLengthValidator(6)])
+    id=models.UUIDField(primary_key=True, default=uuid.uuid4)
+    usafa_id = models.CharField(max_length=6, unique=True, validators=[MinLengthValidator(6)])
     usafa_id_backup = models.CharField(max_length=6, unique=True, validators=[MinLengthValidator(6)])
     discus_id = models.CharField(max_length=25, unique=True)
     first_name = models.CharField(max_length=25, blank=True)
@@ -105,9 +104,6 @@ class Account(AbstractUser):
 
     class Meta:
         ordering = ['last_name', 'first_name', 'middle_name']
-
-    def get_absolute_url(self):
-        return reverse('accountDetail', args=[str(self.usafa_id)])
 
     def __str__(self):
         return f'{self.first_name} {self.middle_name} {self.last_name} ({self.usafa_id})'

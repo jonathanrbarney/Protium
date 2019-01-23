@@ -1,98 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95e2142e-1144-4061-a3ac-c42b1d202593" name="Default Changelist" comment="Changing settings for dev.">
-      <change afterPath="$PROJECT_DIR$/academics/migrations/0002_auto_20181022_1600.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/bootstrap-material-design.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/tabulator_bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cas/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cas/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cas/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/military/migrations/0002_auto_20181022_1628.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bootstrap-material-design.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/tabulator.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/tabulator_semantic-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/v1/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tritium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tritium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="95e2142e-1144-4061-a3ac-c42b1d202593" name="Default Changelist" comment="Reorganization for massive overhaul. WIP.">
+      <change afterPath="$PROJECT_DIR$/discus/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/military/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academics/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academics/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academics/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academics/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0002_auto_20181022_1600.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0003_auto_20190105_1834.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0004_auto_20190110_1706.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0005_auto_20190110_1723.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0006_auto_20190110_1732.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/academics/migrations/0007_auto_20190110_1733.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/academics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academics/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/academics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/academics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admissions/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/admissions/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admissions/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/admissions/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admissions/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/admissions/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admissions/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/admissions/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admissions/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admissions/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admissions/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admissions/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/athletics/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/athletics/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admissions/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/academics/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/athletics/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/athletics/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/athletics/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/athletics/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auxiliary/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/auxiliary/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cas/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discus/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discus/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discus/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discus/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discus/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discus/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discus/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/discus/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/military/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/military/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/military/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/military/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/military/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/military/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/military/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/military/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cas/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/v1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/academics/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/academics/courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/academics/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/academics/department.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/academics/departments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/academics/departments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/Detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/Detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/List.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/List.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/discus/board.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/discus/board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/discus/boards.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/discus/boards.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/discus/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/discus/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/autocomplete.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/fonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-viewlink.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/autocomplete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/change_form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-material-design.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bootstrap-material-design.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/django_select2/django_select2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/android-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/android-icon-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/android-icon-36x36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/android-icon-48x48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/android-icon-72x72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/android-icon-96x96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-114x114.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-120x120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-152x152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-180x180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-57x57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-60x60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-72x72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-76x76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon-precomposed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/favicon-96x96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/ms-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/ms-icon-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/ms-icon-310x310.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/ico/ms-icon-70x70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/profile_pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/tabulator.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/tabulator_semantic-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/academics/courses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/academics/department.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/academics/departments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/Detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/List.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/discus/board.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/discus/boards.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/discus/post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tritium/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tritium/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tritium/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tritium/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/athletics/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1/views.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,98 +217,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/athletics/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="59" lean-forward="true" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/discus/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/military/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="126" column="18" lean-forward="true" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tritium/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cas/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#631#663#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/academics/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+              <folding>
+                <element signature="e#631#663#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/academics/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tritium/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="338">
+              <caret line="182" column="21" selection-start-line="182" selection-start-column="21" selection-end-line="182" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -210,12 +250,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>creator</find>
-      <find>dire</find>
-      <find>get_objec</find>
-      <find>redire</find>
-      <find>allowed</find>
-      <find>get</find>
       <find>instance</find>
       <find>date.</find>
       <find>script</find>
@@ -240,6 +274,12 @@
       <find>depart</find>
       <find>instructor</find>
       <find>instructo</find>
+      <find>period_slot</find>
+      <find>perio</find>
+      <find>term</find>
+      <find>ImageS</find>
+      <find>backends</find>
+      <find>image</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -260,6 +300,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\jonat\Desktop\Tritium</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -268,17 +309,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/academics/courses.html" />
-        <option value="$PROJECT_DIR$/cis/submodels/academics.py" />
-        <option value="$PROJECT_DIR$/templates/auth.html" />
-        <option value="$PROJECT_DIR$/cis/management/commands/myuser.py" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
-        <option value="$PROJECT_DIR$/templates/lists/accountList.html" />
-        <option value="$PROJECT_DIR$/templates/details/accountDetail.html" />
-        <option value="$PROJECT_DIR$/cis/urls.py" />
-        <option value="$PROJECT_DIR$/cis/static/style.css" />
         <option value="$PROJECT_DIR$/templates/lists/departmentList.html" />
         <option value="$PROJECT_DIR$/cis/templatetags/__init__.py" />
         <option value="$PROJECT_DIR$/cis/templatetags/class_name.py" />
@@ -289,35 +319,46 @@
         <option value="$PROJECT_DIR$/cis/forms.py" />
         <option value="$PROJECT_DIR$/cis/admin.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
-        <option value="$PROJECT_DIR$/athletics/models.py" />
-        <option value="$PROJECT_DIR$/accounts/models.py" />
         <option value="$PROJECT_DIR$/tritium/views.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/discus/forms.py" />
-        <option value="$PROJECT_DIR$/discus/models.py" />
-        <option value="$PROJECT_DIR$/discus/views.py" />
         <option value="$PROJECT_DIR$/templates/discus/board.html" />
         <option value="$PROJECT_DIR$/templates/discus/post.html" />
         <option value="$PROJECT_DIR$/accounts/forms.py" />
         <option value="$PROJECT_DIR$/templates/discus/boards.html" />
-        <option value="$PROJECT_DIR$/discus/urls.py" />
         <option value="$PROJECT_DIR$/academics/forms.py" />
         <option value="$PROJECT_DIR$/templates/accounts/login.html" />
         <option value="$PROJECT_DIR$/schedule/models.py" />
-        <option value="$PROJECT_DIR$/military/models.py" />
         <option value="$PROJECT_DIR$/templates/academics/department.html" />
-        <option value="$PROJECT_DIR$/academics/views.py" />
-        <option value="$PROJECT_DIR$/templates/academics/departments.html" />
-        <option value="$PROJECT_DIR$/tritium/settings.py" />
         <option value="$PROJECT_DIR$/v1/urls.py" />
         <option value="$PROJECT_DIR$/academics/admin.py" />
-        <option value="$PROJECT_DIR$/academics/models.py" />
-        <option value="$PROJECT_DIR$/accounts/urls.py" />
-        <option value="$PROJECT_DIR$/athletics/urls.py" />
-        <option value="$PROJECT_DIR$/academics/urls.py" />
-        <option value="$PROJECT_DIR$/military/urls.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/cas/urls.py" />
+        <option value="$PROJECT_DIR$/auxiliary/urls.py" />
+        <option value="$PROJECT_DIR$/auxiliary/views.py" />
+        <option value="$PROJECT_DIR$/cas/views.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/academics/departments.html" />
+        <option value="$PROJECT_DIR$/academics/views.py" />
+        <option value="$PROJECT_DIR$/academics/urls.py" />
+        <option value="$PROJECT_DIR$/academics/serializers.py" />
+        <option value="$PROJECT_DIR$/athletics/serializers.py" />
+        <option value="$PROJECT_DIR$/military/serializers.py" />
+        <option value="$PROJECT_DIR$/athletics/urls.py" />
+        <option value="$PROJECT_DIR$/athletics/views.py" />
+        <option value="$PROJECT_DIR$/discus/serializers.py" />
+        <option value="$PROJECT_DIR$/discus/views.py" />
+        <option value="$PROJECT_DIR$/discus/urls.py" />
+        <option value="$PROJECT_DIR$/military/views.py" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/military/urls.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/accounts/models.py" />
+        <option value="$PROJECT_DIR$/accounts/serializers.py" />
+        <option value="$PROJECT_DIR$/academics/models.py" />
+        <option value="$PROJECT_DIR$/discus/models.py" />
+        <option value="$PROJECT_DIR$/military/models.py" />
+        <option value="$PROJECT_DIR$/athletics/models.py" />
+        <option value="$PROJECT_DIR$/cas/models.py" />
+        <option value="$PROJECT_DIR$/tritium/settings.py" />
         <option value="$PROJECT_DIR$/tritium/urls.py" />
       </list>
     </option>
@@ -356,7 +397,30 @@
             <path>
               <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="academics" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
               <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="athletics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
+              <item name="athletics" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
@@ -376,11 +440,6 @@
             <path>
               <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tritium" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tritium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tritium" type="462c0819:PsiDirectoryNode" />
               <item name="tritium" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -396,19 +455,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jonat\Desktop\Tritium\templates\academics" />
-      <recent name="C:\Users\jonat\Desktop\Tritium\schedule" />
-      <recent name="C:\Users\jonat\Desktop\Tritium\military" />
-      <recent name="C:\Users\jonat\Desktop\Tritium\discus" />
-      <recent name="C:\Users\jonat\Desktop\Tritium\athletics" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jonat\Desktop\Tritium\templates" />
       <recent name="C:\Users\jonat\Desktop\Tritium\accounts" />
       <recent name="C:\Users\jonat\Desktop\Tritium\templates\accounts" />
       <recent name="C:\Users\jonat\Desktop\tritium\templates\accounts" />
       <recent name="C:\Users\jonat\Desktop\tritium\tritium" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/auxiliary" />
+      <recent name="C:\Users\jonat\Desktop\Tritium\templates\academics" />
+      <recent name="C:\Users\jonat\Desktop\Tritium\schedule" />
+      <recent name="C:\Users\jonat\Desktop\Tritium\military" />
+      <recent name="C:\Users\jonat\Desktop\Tritium\discus" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -518,7 +577,21 @@
       <option name="project" value="LOCAL" />
       <updated>1537295440688</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Reorganization for massive overhaul. WIP.">
+      <created>1547764414461</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1547764414461</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Reorganization for massive overhaul. WIP.">
+      <created>1547765788608</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1547765788608</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -534,7 +607,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13224044" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11038251" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -545,28 +618,28 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32829374" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32829374" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49966952" visible="true" weight="0.31857452" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.31006712" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4989071" visible="true" weight="0.31209505" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010929" side_tool="true" weight="0.25053996" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32829374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13681428" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11038251" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32829374" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49966952" weight="0.3865772" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50033045" side_tool="true" weight="0.31006712" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32885906" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32829374" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32829374" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4989071" visible="true" weight="0.44816414" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010929" side_tool="true" weight="0.25053996" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32829374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
@@ -620,71 +693,10 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Another test" />
     <MESSAGE value="Changing settings for dev." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing settings for dev." />
+    <MESSAGE value="Reorganization for massive overhaul. WIP." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganization for massive overhaul. WIP." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cis/views.py" />
-    <entry file="file://$PROJECT_DIR$/cis/urls.py" />
-    <entry file="file://$PROJECT_DIR$/cis/forms.py" />
-    <entry file="file://$PROJECT_DIR$/cis/models.py" />
-    <entry file="file://$PROJECT_DIR$/cis/admin.py" />
-    <entry file="file://$PROJECT_DIR$/admissions/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admissions/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tritium/views.py" />
-    <entry file="file://$PROJECT_DIR$/templates/accounts/List.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="16" selection-end-line="94" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/discus/board.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="118" column="18" lean-forward="true" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discus/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="65" column="42" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discus/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="20" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discus/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/discus/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-524">
-          <caret line="67" column="49" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/academics/course.html" />
     <entry file="file://$PROJECT_DIR$/accounts/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -696,13 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -722,9 +727,6 @@
     </entry>
     <entry file="file://C:/Program Files/Python36/Lib/importlib/__init__.py" />
     <entry file="file://$PROJECT_DIR$/../envs/Tritium/Lib/site-packages/django/db/models/fields/related.py" />
-    <entry file="file://$PROJECT_DIR$/templates/academics/courses.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -736,30 +738,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
-    <entry file="file://$PROJECT_DIR$/templates/academics/department.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/academics/departments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tritium/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="171" column="62" selection-start-line="171" selection-start-column="62" selection-end-line="171" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/v1/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/v1/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -773,102 +751,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/v1/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/academics/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/athletics/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/military/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cas/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="111" selection-start-line="111" selection-end-line="112" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/academics/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/military/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/athletics/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="59" lean-forward="true" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/discus/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -882,34 +768,322 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tritium/urls.py">
+    <entry file="file://$PROJECT_DIR$/auxiliary/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="42" column="44" lean-forward="true" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        <state relative-caret-position="361">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/academics/courses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="71" column="17" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/academics/departments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auxiliary/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding>
             <element signature="e#631#663#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/v1/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="126" column="18" lean-forward="true" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
+        <state relative-caret-position="228">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/academics/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/academics/department.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="165">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/academics/views.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-end-line="44" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auxiliary/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discus/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discus/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="7" lean-forward="true" selection-end-line="13" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/military/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/military/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/athletics/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/athletics/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/athletics/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/athletics/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discus/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="15" lean-forward="true" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/military/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="52" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="28" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="1" lean-forward="true" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discus/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/military/models.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/academics/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/athletics/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-916">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tritium/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="182" column="21" selection-start-line="182" selection-start-column="21" selection-end-line="182" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tritium/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

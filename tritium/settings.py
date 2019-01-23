@@ -41,14 +41,15 @@ INSTALLED_APPS = [
     'admissions.apps.AdmissionsConfig',
     'discus.apps.DiscusConfig',
     'military.apps.MilitaryConfig',
+    'athletics.apps.AthleticsConfig',
     'cas.apps.ScheduleConfig',
+    'auxiliary.apps.AuxiliaryConfig',
     'phonenumber_field',
-    'widget_tweaks',
     'vote',
-    'imagekit',
-    'django_select2',
     'admin_honeypot',
     'rest_framework',
+    'oauth2_provider',
+
 ]
 
 MIDDLEWARE = [
@@ -169,9 +170,22 @@ EMAIL_HOST_PASSWORD = 'Qr9$h$Z5Ul1iy4wo090$&sv*kl1!'
 EMAIL_USE_TLS = True
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )    ,
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+    )
+
+}
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
 }

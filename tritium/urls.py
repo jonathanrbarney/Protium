@@ -26,21 +26,45 @@ from django.conf import settings
 urlpatterns = [
     path('nucleus/', admin.site.urls),
     path('admin/', include('admin_honeypot.urls')),
-    re_path(r'^select2/', include('django_select2.urls')),
-    re_path(r'^api-auth/', include('rest_framework.urls'))
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+from django.urls import include, path
+from rest_framework import routers
+from athletics import views
+
+router = routers.DefaultRouter()
+router.register(r'athletics/pft', views.PFTViewSet)
+router.register(r'athletics/aft', views.AFTViewSet)
+
+from discus import views
+
+router.register(r'discus/board', views.BoardViewSet)
+router.register(r'discus/posts', views.PostViewSet)
+
+from military import views
+
+router.register(r'military/positions', views.PositionViewSet)
+router.register(r'military/units', views.UnitViewSet)
+router.register(r'military/samis', views.SAMIViewSet)
+router.register(r'military/amis', views.AMIViewSet)
+router.register(r'military/pais', views.PAIViewSet)
+
+from academics import views
+
+router.register(r'academics/terms', views.TermViewSet)
+router.register(r'academics/courses', views.CourseViewSet)
+router.register(r'academics/periods', views.PeriodViewSet)
+router.register(r'academics/sections', views.SectionViewSet)
+router.register(r'academics/enrollments', views.EnrollmentViewSet)
+router.register(r'academics/departments', views.DepartmentViewSet)
+router.register(r'academics/programs', views.ProgramViewSet)
+router.register(r'academics/requirements', views.RequirementViewSet)
+
+from accounts import views
+
+router.register(r'accounts', views.AccountViewSet)
 
 urlpatterns += [
-    path('', login_required()(views.home), name='home'),
-    re_path(r'^v1/', include('v1.urls')),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logout'),
-    path('register/', views.register,name='register'),
-    path('accounts/', include('accounts.urls')),
-    path('academics/', include('academics.urls')),
-    path('admissions/', include('admissions.urls')),
-    path('athletics/', include('athletics.urls')),
-    path('discus/', include('discus.urls')),
-    path('military/', include('military.urls')),
-    path('cas/', include('cas.urls')),
+    path('', include(router.urls),name='home'),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]

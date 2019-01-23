@@ -14,8 +14,7 @@ from django.core.validators import MinLengthValidator
 from datetime import date
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+
 
 class Term(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
@@ -63,7 +62,6 @@ class Section(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='sections_created')
     instructors = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='%(class)s_instructed')
     term = models.ForeignKey(Term, on_delete = models.CASCADE, related_name='sections')
-    students = models.ManyToManyField(settings.AUTH_USER_MODEL, through='Enrollment')
     max_students = models.IntegerField(null=True, blank=True)
     period = models.ManyToManyField(Period, related_name = 'sections')
     def __str__(self):
@@ -72,7 +70,7 @@ class Section(models.Model):
 class Enrollment(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="enrollments")
-    section = models.ForeignKey(Section, on_delete=models.SET_NULL, related_name="enrollments", null=True)
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, related_name="enrollments", null=True)
     number_grade = models.DecimalField(max_digits=7, decimal_places=4, blank=True, null=True)
     GRADE_CHOICES = (
         ('A', 'A'),
@@ -144,7 +142,7 @@ class Program(models.Model):
         ('Athletic', 'Athletic'),
     )
     type = models.CharField(max_length=100, choices=PROGRAM_TYPES)
-    department = models.ForeignKey('Department', on_delete=models.SET_NULL, null=True, blank=True)
+    department = models.ForeignKey('Department', on_delete=models.SET_NULL, null=True, blank=True, related_name='programs')
     cadets = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='programs')
     summary = models.TextField()
     credit_requirement = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
