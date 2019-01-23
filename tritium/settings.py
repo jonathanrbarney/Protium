@@ -170,19 +170,21 @@ EMAIL_HOST_PASSWORD = 'Qr9$h$Z5Ul1iy4wo090$&sv*kl1!'
 EMAIL_USE_TLS = True
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissions',
         'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_RENDERER_CLASSES': (
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
-    )    ,
-    'DEFAULT_PARSER_CLASSES': (
+    ]   ,
+    'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',
-    )
+    ]
 
 }
 OAUTH2_PROVIDER = {
