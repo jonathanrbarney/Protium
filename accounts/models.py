@@ -90,7 +90,7 @@ class Account(AbstractUser):
         # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
         return 'user_{0}/{1}'.format(self.usafa_id, filename)
 
-    profile_pic = models.ImageField(blank=True, upload_to=user_directory_path)
+    profile_pic = models.ImageField(null=True, blank=True, upload_to=user_directory_path)
 
     def is_in(self, grp):
         return self.groups.filter(name=str(grp)).exists()
