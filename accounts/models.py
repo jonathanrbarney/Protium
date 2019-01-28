@@ -42,6 +42,21 @@ class Account(AbstractUser):
         choices=GENDER,
         blank=True,
     )
+    ACCOUNTS = (
+        ('Applicant', 'Applicant'),
+        ('Cadet', 'Cadet'),
+        ('Instructor', 'Instructor'),
+        ('Permanent Party', 'Permanent Party'),
+        ('Coach', 'Coach'),
+        ('Medical Staff', 'Medical Staff'),
+        ('Facilities', 'Facilities'),
+        ('Alumni', 'Alumni'),
+        ('Other','Other'),
+        ('None', 'None'),
+    )
+
+    account_type = models.CharField(max_length=30, choices=ACCOUNTS, default='None')
+    has_attended = models.BooleanField(default=False)
 
     def calculate_age(self):
         born = self.dob
@@ -94,13 +109,6 @@ class Account(AbstractUser):
 
     def is_in(self, grp):
         return self.groups.filter(name=str(grp)).exists()
-
-    @property
-    def group_dict(self):
-        GRPS = {}
-        for i in self.groups.all():
-            GRPS[i.name] = True
-        return GRPS
 
     class Meta:
         ordering = ['last_name', 'first_name', 'middle_name']
