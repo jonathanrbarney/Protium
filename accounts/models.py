@@ -17,6 +17,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 
 class Account(AbstractUser):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4)
+    bio = models.TextField(default ="Hi! I'm new here")
     usafa_id = models.CharField(max_length=6, unique=True, validators=[MinLengthValidator(6)])
     usafa_id_backup = models.CharField(max_length=6, unique=True, validators=[MinLengthValidator(6)])
     discus_id = models.CharField(max_length=25, unique=True)
@@ -33,9 +34,9 @@ class Account(AbstractUser):
     official_phone_number = PhoneNumberField(blank=True)
     phone_number = PhoneNumberField(blank=True)
     GENDER = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-        ('A', 'Attack Helicopter'),
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+        ('Attack Helicopter', 'Attack Helicopter'),
     )
     gender = models.CharField(
         max_length=1,

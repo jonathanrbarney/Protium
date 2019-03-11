@@ -15,7 +15,7 @@ from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
-class Board(VoteModel,models.Model):
+class Board(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=1000)
     description = models.TextField()
@@ -35,7 +35,7 @@ class Board(VoteModel,models.Model):
     def get_url(self):
         return reverse('discus_board', kwargs={'id': str(self.id)})
 
-class Post(models.Model):
+class Post(VoteModel,models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='posts', null=True)
     is_anonymous = models.BooleanField(default=False)

@@ -63,9 +63,15 @@ router.register(r'academics/requirements', views.RequirementViewSet)
 from accounts import views
 
 router.register(r'accounts', views.AccountViewSet)
+from django.views.generic.base import RedirectView
 
 urlpatterns += [
-    path('', include(router.urls), name='home'),
+    path('v1/', include(router.urls), name='api'),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
+
+urlpatterns += [
+    path('', RedirectView.as_view(url='/v1/', permanent=True), name='home'),
+    path('v1/', include('knox.urls')),
+    ]
