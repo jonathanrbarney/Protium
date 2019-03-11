@@ -31,3 +31,7 @@ class IsFacilities(permissions.BasePermission):
 class IsAlumni(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         return request.user.account_type == 'Alumni'
+
+class IsSelf(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return request.user == obj

@@ -1,7 +1,8 @@
-from django.contrib.auth.models import User, Group
 from accounts.serializers import *
 from accounts.models import *
 from rest_framework import viewsets, mixins
+from accounts.permissions import *
+from url_filter.integrations.drf import DjangoFilterBackend
 
 class AccountViewSet(mixins.RetrieveModelMixin,
                    mixins.UpdateModelMixin,
@@ -10,3 +11,6 @@ class AccountViewSet(mixins.RetrieveModelMixin,
 
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
+    permission_classes = [IsSelf]
+    filter_backends = [DjangoFilterBackend]
+    #filter_fields = ['username', 'email']

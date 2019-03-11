@@ -28,6 +28,7 @@ class Account(AbstractUser):
     official_phone_verified = models.BooleanField(blank=False, default=False)
     phone_verified = models.BooleanField(blank=False, default=False)
     last_name = models.CharField(max_length=25, blank=True)
+    hometown = models.CharField(max_length=200, blank=True)
     dob = models.DateField(blank=True, null=True)
     email = models.EmailField(max_length=248, unique=True)
     official_email = models.EmailField(max_length=248, blank=True)

@@ -22,6 +22,7 @@ class PFT(models.Model):
     cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     score = models.DecimalField(max_digits=5, decimal_places=2)
 
+
 class AFT(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     cadet = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
