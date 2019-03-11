@@ -24,7 +24,7 @@ SECRET_KEY = '_n)u06t%_jqsr+&*!xw_ehg8mo01sn)iurlka7@nq&r$3c7z+j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'protium.elichor.com', 'moodle.elichor.com', 'elichor.com', '*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'protium.jonathanbarney.com',  '*']
 
 
 # Application definition
@@ -211,8 +211,8 @@ OAUTH2_PROVIDER = {
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
     '127.0.0.1:4200',
-    'tritium.elichor.com',
-    'protium.elichor.com',
+    'tritium.jonathanbarney.com',
+    'protium.jonathanbarney.com',
 )
 CORS_ALLOW_METHODS = (
     'DELETE',
@@ -225,6 +225,6 @@ CORS_ALLOW_METHODS = (
 CSRF_TRUSTED_ORIGINS = (
     'localhost',
     '127.0.0.1',
-    'tritium.elichor.com',
-    'protium.elichor.com',
+    'tritium.jonathanbarney.com',
+    'protium.jonathanbarney.com',
 )
