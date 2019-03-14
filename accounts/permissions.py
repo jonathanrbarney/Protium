@@ -1,37 +1,22 @@
 from rest_framework import permissions
+from accounts.serializers import OwnAccountSerializer,PublicAccountSerializer
 
-class IsCadet(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Cadet'
+class AccountPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if bool(request.user and request.user.is_authenticated):
+                return True
+        return False
 
-class IsApplicant(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Applicant'
+        if bool(request.user and request.user.is_authenticated):
+            if view.action in ['partial_update', 'update']:
+                if (request.user == obj):
+                    return True
+            if view.action == 'retrieve':
+                if (request.user == obj):
+                    view.serializer=OwnAccountSerializer
+                else:
+                    view.serializer=PublicAccountSerializer
+                return True
+        return False
 
-class IsInstructor(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Instructor'
-
-class IsPermanentParty(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Permanent Party'
-
-class IsCoach(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Coach'
-
-class IsMedicalStaff(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Medical Staff'
-
-class IsFacilities(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Facilities'
-
-class IsAlumni(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user.account_type == 'Alumni'
-
-class IsSelf(permissions.BasePermission):
-    def has_object_permission(self, request, view, obj):
-        return request.user == obj

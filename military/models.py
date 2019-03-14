@@ -5,7 +5,6 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.conf import settings
 from django.urls import reverse
 import random
-from vote.models import VoteModel
 from django.contrib.auth.models import User
 import uuid
 from phonenumber_field.modelfields import PhoneNumberField

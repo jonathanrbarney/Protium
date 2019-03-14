@@ -39,35 +39,37 @@ router.register(r'athletics/aft', views.AFTViewSet)
 from discus import views
 
 router.register(r'discus/board', views.BoardViewSet)
-router.register(r'discus/posts', views.PostViewSet)
+router.register(r'discus/post', views.PostViewSet)
+router.register(r'discus/vote', views.VoteViewSet)
 
 from military import views
 
-router.register(r'military/positions', views.PositionViewSet)
-router.register(r'military/units', views.UnitViewSet)
-router.register(r'military/samis', views.SAMIViewSet)
-router.register(r'military/amis', views.AMIViewSet)
-router.register(r'military/pais', views.PAIViewSet)
+router.register(r'military/position', views.PositionViewSet)
+router.register(r'military/unit', views.UnitViewSet)
+router.register(r'military/sami', views.SAMIViewSet)
+router.register(r'military/ami', views.AMIViewSet)
+router.register(r'military/pai', views.PAIViewSet)
 
 from academics import views
 
-router.register(r'academics/terms', views.TermViewSet)
-router.register(r'academics/courses', views.CourseViewSet)
-router.register(r'academics/periods', views.PeriodViewSet)
-router.register(r'academics/sections', views.SectionViewSet)
-router.register(r'academics/enrollments', views.EnrollmentViewSet)
-router.register(r'academics/departments', views.DepartmentViewSet)
-router.register(r'academics/programs', views.ProgramViewSet)
-router.register(r'academics/requirements', views.RequirementViewSet)
+router.register(r'academics/term', views.TermViewSet)
+router.register(r'academics/course', views.CourseViewSet)
+router.register(r'academics/period', views.PeriodViewSet)
+router.register(r'academics/section', views.SectionViewSet)
+router.register(r'academics/enrollment', views.EnrollmentViewSet)
+router.register(r'academics/registration', views.RegistrationViewSet)
+router.register(r'academics/completion', views.CompletionViewSet)
+router.register(r'academics/department', views.DepartmentViewSet)
+router.register(r'academics/program', views.ProgramViewSet)
+router.register(r'academics/requirement', views.RequirementViewSet)
 
 from accounts import views
 
-router.register(r'accounts', views.AccountViewSet)
+router.register(r'account', views.AccountViewSet)
 from django.views.generic.base import RedirectView
 
 urlpatterns += [
     path('v1/', include(router.urls), name='api'),
-    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 

@@ -10,7 +10,7 @@ from accounts.models import Account
 class AccountAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password', 'usafa_id')}),
-        (('Personal info'), {'fields': ('email', 'first_name', 'middle_name', 'last_name', 'dob',
+        (('Personal info'), {'fields': ('account_type','email', 'first_name', 'middle_name', 'last_name', 'dob',
                                         'phone_number', 'gender', 'official_email', 'official_phone_number',
                                         'profile_pic', 'room_number', 'last_four', 'building', 'SSN', 'class_year',
                                         'academic_advisor','discus_id')}),
@@ -21,7 +21,7 @@ class AccountAdmin(UserAdmin):
     readonly_fields=['usafa_id']
     add_fieldsets = (
         (None, {'fields': ('username', 'password1', 'password2')}),
-        (('Personal info'), {'fields': ('email', 'first_name', 'middle_name', 'last_name', 'dob',
+        (('Personal info'), {'fields': ('account_type','email', 'first_name', 'middle_name', 'last_name', 'dob',
                                         'phone_number', 'gender', 'official_email', 'official_phone_number',
                                         'profile_pic','discus_id')}),
         (('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',

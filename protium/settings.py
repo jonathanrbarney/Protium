@@ -45,14 +45,10 @@ INSTALLED_APPS = [
     'cas.apps.ScheduleConfig',
     'auxiliary.apps.AuxiliaryConfig',
     'phonenumber_field',
-    'vote',
     'admin_honeypot',
     'rest_framework',
-    'oauth2_provider',
     'corsheaders',
     'knox',
-    'url_filter',
-
 ]
 
 MIDDLEWARE = [
@@ -190,7 +186,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',
         'rest_framework.parsers.MultiPartParser',
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+
 
 }
 from datetime import timedelta

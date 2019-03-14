@@ -5,7 +5,6 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.conf import settings
 from django.urls import reverse
 import random
-from vote.models import VoteModel
 from django.contrib.auth.models import User
 import uuid
 from phonenumber_field.modelfields import PhoneNumberField
@@ -13,7 +12,7 @@ from django.core.validators import MinLengthValidator
 from datetime import date
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-
+from academics.models import Program
 
 class Account(AbstractUser):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4)
@@ -34,6 +33,7 @@ class Account(AbstractUser):
     official_email = models.EmailField(max_length=248, blank=True)
     official_phone_number = PhoneNumberField(blank=True)
     phone_number = PhoneNumberField(blank=True)
+    programs = models.ManyToManyField(Program, related_name='cadets')
     GENDER = (
         ('Male', 'Male'),
         ('Female', 'Female'),
@@ -60,12 +60,13 @@ class Account(AbstractUser):
     account_type = models.CharField(max_length=30, choices=ACCOUNTS, default='None')
     has_attended = models.BooleanField(default=False)
 
-    def calculate_age(self):
+    @property
+    def age(self):
         born = self.dob
         today = datetime.today()
         return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
-    room_number = models.CharField(max_length=5)
+    room_number = models.CharField(max_length=7, blank=True)
     BUILDINGS = (
         ('Vandenberg Hall', 'Vandenberg Hall'),
         ('Sijan Hall', 'Sijan Hall'),
@@ -74,7 +75,7 @@ class Account(AbstractUser):
         ('Mitchell Hall', 'Mitchell Hall'),
         ('Arnold Hall', 'Arnold Hall'),
     )
-    building = models.CharField(max_length=30, choices=BUILDINGS)
+    building = models.CharField(max_length=30, choices=BUILDINGS, blank=True)
 
     last_four = models.CharField(blank=True, max_length=4, validators=[MinLengthValidator(4)])
     SSN = models.CharField(max_length=128, blank=True)
