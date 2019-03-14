@@ -24,7 +24,7 @@ SECRET_KEY = '_n)u06t%_jqsr+&*!xw_ehg8mo01sn)iurlka7@nq&r$3c7z+j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'protium.jonathanbarney.com',  '*']
+ALLOWED_HOSTS = ['protium.jonathanbarney.com',  '*']
 
 
 # Application definition
@@ -150,13 +150,13 @@ PASSWORD_HASHERS = [
 PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 #SECURE_HSTS_SECONDS = 10
-SECURE_SSL_REDIRECT = False
-SECURE_BROWSER_XSS_FILTER = False
-SECURE_CONTENT_TYPE_NOSNIFF = False
-DEBUG = True
+SECURE_SSL_REDIRECT = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+DEBUG = False
 
 
 X_FRAME_OPTIONS = 'DENY'
@@ -175,17 +175,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'knox.auth.TokenAuthentication',
     ],
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
     ]   ,
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',
-        'rest_framework.parsers.MultiPartParser',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10
@@ -208,8 +205,6 @@ OAUTH2_PROVIDER = {
 
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:4200',
-    '127.0.0.1:4200',
     'tritium.jonathanbarney.com',
     'protium.jonathanbarney.com',
 )
@@ -222,8 +217,6 @@ CORS_ALLOW_METHODS = (
     'PUT',
 )
 CSRF_TRUSTED_ORIGINS = (
-    'localhost',
-    '127.0.0.1',
     'tritium.jonathanbarney.com',
     'protium.jonathanbarney.com',
 )
