@@ -198,7 +198,7 @@ REST_KNOX = {
   'AUTH_TOKEN_CHARACTER_LENGTH': 64,
   'TOKEN_TTL': timedelta(hours=10),
   'USER_SERIALIZER': 'accounts.serializers.AccountSnapshot',
-  'AUTO_REFRESH': False,
+  'AUTO_REFRESH': True,
 }
 
 OAUTH2_PROVIDER = {

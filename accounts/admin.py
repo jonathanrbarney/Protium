@@ -23,7 +23,7 @@ class AccountAdmin(UserAdmin):
         (None, {'fields': ('username', 'password1', 'password2')}),
         (('Personal info'), {'fields': ('account_type','email', 'first_name', 'middle_name', 'last_name', 'dob',
                                         'phone_number', 'gender', 'official_email', 'official_phone_number',
-                                        'profile_pic','discus_id')}),
+                                        'profile_pic','discus_id','hometown')}),
         (('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                       'groups', 'user_permissions')}),
     )

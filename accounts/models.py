@@ -13,20 +13,21 @@ from datetime import date
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from academics.models import Program
+import secrets
 
 class Account(AbstractUser):
     id=models.UUIDField(primary_key=True, default=uuid.uuid4)
     bio = models.TextField(default ="Hi! I'm new here")
     usafa_id = models.CharField(max_length=6, unique=True, validators=[MinLengthValidator(6)])
     usafa_id_backup = models.CharField(max_length=6, unique=True, validators=[MinLengthValidator(6)])
-    discus_id = models.CharField(max_length=25, unique=True)
-    first_name = models.CharField(max_length=25, blank=True)
-    middle_name = models.CharField(max_length=25, blank=True)
+    discus_id = models.CharField(max_length=25, unique=True,blank=True)
+    first_name = models.CharField(max_length=25, blank=False)
+    middle_name = models.CharField(max_length=35, blank=True)
     email_verified = models.BooleanField(blank=False, default=False)
     official_email_verified = models.BooleanField(blank=False, default=False)
     official_phone_verified = models.BooleanField(blank=False, default=False)
     phone_verified = models.BooleanField(blank=False, default=False)
-    last_name = models.CharField(max_length=25, blank=True)
+    last_name = models.CharField(max_length=25, blank=False)
     hometown = models.CharField(max_length=200, blank=True)
     dob = models.DateField(blank=True, null=True)
     email = models.EmailField(max_length=248, unique=True)
@@ -89,7 +90,10 @@ class Account(AbstractUser):
 
     @property
     def full_name(self):
-        return f"{self.first_name} {self.middle_name} {self.last_name}"
+        if self.middle_name=='':
+            return f"{self.first_name} {self.last_name}"
+        else:
+            return f"{self.first_name} {self.middle_name} {self.last_name}"
 
     def generate_usafa_id(self):
         from random import randint
@@ -118,3 +122,37 @@ class Account(AbstractUser):
 
     def __str__(self):
         return f'{self.first_name} {self.middle_name} {self.last_name} ({self.usafa_id})'
+
+def expiration_calc():
+    return datetime.datetime.now() + datetime.timedelta(hours=1)
+
+def token_gen():
+    return secrets.token_urlsafe(64)
+class CreationTicket(models.Model):
+    id=models.UUIDField(primary_key=True, default=uuid.uuid4)
+    issuer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,blank=True,null=True)
+    expiration = models.DateTimeField(default=expiration_calc)
+    ACCOUNTS = (
+        ('Applicant', 'Applicant'),
+        ('Cadet', 'Cadet'),
+        ('Instructor', 'Instructor'),
+        ('Permanent Party', 'Permanent Party'),
+        ('Coach', 'Coach'),
+        ('Medical Staff', 'Medical Staff'),
+        ('Facilities', 'Facilities'),
+        ('Alumni', 'Alumni'),
+        ('Other', 'Other'),
+        ('None', 'None'),
+    )
+
+    account_type = models.CharField(max_length=30, choices=ACCOUNTS, default='None')
+    email = models.EmailField(max_length=248, blank=True)
+    token= models.CharField(default=token_gen,max_length=100)
+
+    @property
+    def is_valid(self):
+        if self.expiration <= datetime.datetime.now():
+            return False
+        else:
+            return True
+

@@ -64,7 +64,7 @@ router.register(r'academics/program', views.ProgramViewSet)
 router.register(r'academics/requirement', views.RequirementViewSet)
 
 from accounts import views
-
+router.register(r'ct', views.CreationTicketViewSet)
 router.register(r'account', views.AccountViewSet)
 from django.views.generic.base import RedirectView
 

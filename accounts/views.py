@@ -9,6 +9,7 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 class AccountViewSet(mixins.RetrieveModelMixin,
                    mixins.UpdateModelMixin,
                    mixins.ListModelMixin,
+                     mixins.CreateModelMixin,
                    viewsets.GenericViewSet):
 
     queryset = Account.objects.all()
@@ -19,3 +20,11 @@ class AccountViewSet(mixins.RetrieveModelMixin,
                      'gender','class_year','account_type']
     ordering_fields = ['usafa_id','first_name','middle_name','last_name', 'official_email',
                      'gender','class_year','account_type']
+class CreationTicketViewSet(mixins.ListModelMixin,
+                            mixins.RetrieveModelMixin,
+                            mixins.CreateModelMixin,
+                            mixins.DestroyModelMixin,
+                            viewsets.GenericViewSet):
+    queryset = CreationTicket.objects.all()
+    serializer_class = CTSerializer
+    permission_classes = [IsAuthenticated&CreationTicketPermission]
